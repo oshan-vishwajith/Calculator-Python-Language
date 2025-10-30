@@ -1,0 +1,14 @@
+# Python Calculator - Requirements
+
+# No external dependencies required for basic functionality
+# All features use Python standard library
+
+# Optional: For running tests
+pytest>=7.0.0
+
+# Optional: For code formatting
+black>=22.0.0
+
+# Optional: For linting
+pylint>=2.15.0
+flake8>=5.0.0

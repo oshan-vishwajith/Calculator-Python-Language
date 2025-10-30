@@ -39,3 +39,17 @@ def calculator():
         except ValueError:
             print("❌ Invalid input! Please enter numeric values.")
             continue
+
+        if operation == '+':
+            result = add(num1, num2)
+        elif operation == '-':
+            result = subtract(num1, num2)
+        elif operation == '*':
+            result = multiply(num1, num2)
+        elif operation == '/':
+            result = divide(num1, num2)
+
+        print(f"✅ Result: {result}\n")
+
+if __name__ == "__main__":
+    calculator

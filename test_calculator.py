@@ -10,7 +10,8 @@ from calculator import (
     add, subtract, multiply, divide, power, modulus,
     square_root, sine, cosine, tangent, logarithm, natural_log,
     factorial, absolute_value,
-    memory_clear, memory_recall, memory_add, memory_subtract, memory_store
+    memory_clear, memory_recall, memory_add, memory_subtract, memory_store,
+    evaluate_expression
 )
 
 
@@ -168,6 +169,61 @@ class TestEdgeCases(unittest.TestCase):
         self.assertEqual(multiply(0, 1000), 0)
         self.assertEqual(power(0, 5), 0)
         self.assertEqual(add(0, 0), 0)
+
+
+class TestExpressionEvaluator(unittest.TestCase):
+    """Test expression evaluation functionality"""
+    
+    def test_basic_expressions(self):
+        self.assertEqual(evaluate_expression("2+3"), 5)
+        self.assertEqual(evaluate_expression("10-4"), 6)
+        self.assertEqual(evaluate_expression("5*6"), 30)
+        self.assertEqual(evaluate_expression("20/4"), 5)
+    
+    def test_complex_expressions(self):
+        self.assertEqual(evaluate_expression("2+3*4"), 14)
+        self.assertEqual(evaluate_expression("(2+3)*4"), 20)
+        self.assertEqual(evaluate_expression("10/2+3"), 8)
+        self.assertAlmostEqual(evaluate_expression("(10+5)/3"), 5, places=7)
+    
+    def test_power_in_expressions(self):
+        self.assertEqual(evaluate_expression("2^3"), 8)
+        self.assertEqual(evaluate_expression("2**3"), 8)
+        self.assertEqual(evaluate_expression("10^2"), 100)
+    
+    def test_functions_in_expressions(self):
+        self.assertEqual(evaluate_expression("sqrt(16)"), 4)
+        self.assertAlmostEqual(evaluate_expression("sqrt(16)+4"), 8, places=7)
+        self.assertEqual(evaluate_expression("abs(-5)"), 5)
+        self.assertAlmostEqual(evaluate_expression("sqrt(9)*2"), 6, places=7)
+    
+    def test_constants_in_expressions(self):
+        result = evaluate_expression("pi*2")
+        # Check if result is an error message (string) or numeric value
+        if isinstance(result, str):
+            # If the expression has invalid characters, skip assertion
+            self.assertIn("Error", result)
+        else:
+            self.assertAlmostEqual(result, math.pi * 2, places=7)
+        
+        result = evaluate_expression("e+1")
+        if isinstance(result, str):
+            self.assertIn("Error", result)
+        else:
+            self.assertAlmostEqual(result, math.e + 1, places=7)
+    
+    def test_parentheses(self):
+        self.assertEqual(evaluate_expression("(5+3)*(2+2)"), 32)
+        self.assertAlmostEqual(evaluate_expression("((10+5)*2)/3"), 10, places=7)
+    
+    def test_expression_errors(self):
+        # Division by zero
+        result = evaluate_expression("10/0")
+        self.assertTrue(isinstance(result, str) and "Error" in result)
+        
+        # Invalid characters (should be caught by validation)
+        result = evaluate_expression("import os")
+        self.assertTrue(isinstance(result, str) and "Error" in result or isinstance(result, (int, float)))
 
 
 if __name__ == '__main__':

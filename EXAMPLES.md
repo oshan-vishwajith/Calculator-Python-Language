@@ -3,6 +3,7 @@
 This document provides detailed examples of how to use all features of the Advanced Python Calculator.
 
 ## Table of Contents
+
 1. [Basic Operations](#basic-operations)
 2. [Scientific Functions](#scientific-functions)
 3. [Memory Operations](#memory-operations)
@@ -14,6 +15,7 @@ This document provides detailed examples of how to use all features of the Advan
 ## Basic Operations
 
 ### Addition (+)
+
 Calculate the sum of two numbers.
 
 ```
@@ -24,6 +26,7 @@ Enter the second number: 17
 ```
 
 ### Subtraction (-)
+
 Calculate the difference between two numbers.
 
 ```
@@ -33,7 +36,8 @@ Enter the second number: 42
 ✅ Result: 58.0
 ```
 
-### Multiplication (*)
+### Multiplication (\*)
+
 Calculate the product of two numbers.
 
 ```
@@ -44,6 +48,7 @@ Enter the second number: 8
 ```
 
 ### Division (/)
+
 Divide one number by another (with zero-protection).
 
 ```
@@ -54,6 +59,7 @@ Enter the second number: 12
 ```
 
 ### Power (^)
+
 Raise a number to a power.
 
 ```
@@ -64,6 +70,7 @@ Enter the second number: 10
 ```
 
 ### Modulus (%)
+
 Find the remainder of division.
 
 ```
@@ -78,6 +85,7 @@ Enter the second number: 5
 ## Scientific Functions
 
 ### Square Root (sqrt)
+
 Calculate the square root of a number.
 
 ```
@@ -89,6 +97,7 @@ Enter number: 144
 **Use Case**: Finding the side length of a square given its area.
 
 ### Sine (sin)
+
 Calculate sine of an angle in degrees.
 
 ```
@@ -98,12 +107,14 @@ Enter number: 30
 ```
 
 **Common Values**:
+
 - sin(0°) = 0
 - sin(30°) = 0.5
 - sin(45°) ≈ 0.707
 - sin(90°) = 1
 
 ### Cosine (cos)
+
 Calculate cosine of an angle in degrees.
 
 ```
@@ -113,11 +124,13 @@ Enter number: 60
 ```
 
 **Common Values**:
+
 - cos(0°) = 1
 - cos(60°) = 0.5
 - cos(90°) = 0
 
 ### Tangent (tan)
+
 Calculate tangent of an angle in degrees.
 
 ```
@@ -127,12 +140,13 @@ Enter number: 45
 ```
 
 ### Logarithm (log)
+
 Calculate logarithm with custom base (default base 10).
 
 ```
 ➤ Enter operation or 'q' to quit: log
 Enter number: 100
-Enter base (press Enter for base 10): 
+Enter base (press Enter for base 10):
 ✅ Result: 2.0
 
 ➤ Enter operation or 'q' to quit: log
@@ -142,10 +156,12 @@ Enter base (press Enter for base 10): 2
 ```
 
 **Use Cases**:
+
 - log₁₀(100) = 2 (How many 10s multiply to 100?)
 - log₂(8) = 3 (How many 2s multiply to 8?)
 
 ### Natural Logarithm (ln)
+
 Calculate natural logarithm (base e ≈ 2.71828).
 
 ```
@@ -155,6 +171,7 @@ Enter number: 2.71828
 ```
 
 ### Factorial (!)
+
 Calculate factorial of a number (n! = n × (n-1) × ... × 1).
 
 ```
@@ -164,11 +181,13 @@ Enter number: 5
 ```
 
 **Factorials**:
+
 - 0! = 1
 - 5! = 120
 - 10! = 3,628,800
 
 ### Absolute Value (abs)
+
 Get the absolute (positive) value of a number.
 
 ```
@@ -184,6 +203,7 @@ Enter number: -42
 Memory operations allow you to store and manipulate values across calculations.
 
 ### Memory Store (ms)
+
 Store a value in memory.
 
 ```
@@ -193,6 +213,7 @@ Enter value: 100
 ```
 
 ### Memory Recall (mr)
+
 Retrieve the value from memory.
 
 ```
@@ -201,6 +222,7 @@ Retrieve the value from memory.
 ```
 
 ### Memory Add (m+)
+
 Add a value to the current memory.
 
 ```
@@ -210,6 +232,7 @@ Enter value: 50
 ```
 
 ### Memory Subtract (m-)
+
 Subtract a value from the current memory.
 
 ```
@@ -219,6 +242,7 @@ Enter value: 30
 ```
 
 ### Memory Clear (mc)
+
 Clear all memory.
 
 ```
@@ -227,10 +251,11 @@ Clear all memory.
 ```
 
 ### Memory Workflow Example
+
 ```
 1. Calculate: 25 + 75 = 100
 2. Store: ms → 100
-3. Calculate: 50 × 2 = 100  
+3. Calculate: 50 × 2 = 100
 4. Add to memory: m+ → 100 (memory now = 200)
 5. Recall: mr → 200
 ```
@@ -240,6 +265,7 @@ Clear all memory.
 ## History Features
 
 ### View History (hist)
+
 Display all calculations from the current session.
 
 ```
@@ -255,6 +281,7 @@ Display all calculations from the current session.
 ```
 
 ### Export History (export)
+
 Save calculation history to a JSON file.
 
 ```
@@ -263,6 +290,7 @@ Save calculation history to a JSON file.
 ```
 
 **JSON Format**:
+
 ```json
 [
   {
@@ -279,6 +307,7 @@ Save calculation history to a JSON file.
 ```
 
 ### Clear History (clear)
+
 Remove all calculation history.
 
 ```
@@ -291,6 +320,7 @@ Remove all calculation history.
 ## Common Use Cases
 
 ### 1. Calculate Circle Area
+
 **Formula**: Area = π × r²
 
 ```
@@ -308,6 +338,7 @@ Enter the second number: 3.14159
 ```
 
 ### 2. Calculate Triangle Height (Trigonometry)
+
 If you know the hypotenuse and angle:
 
 ```
@@ -325,6 +356,7 @@ Enter the second number: 0.5
 ```
 
 ### 3. Compound Interest Calculation
+
 Store principal, add interest repeatedly:
 
 ```
@@ -349,6 +381,7 @@ Enter value: 100
 ```
 
 ### 4. Statistical Calculations
+
 Calculate average (mean):
 
 ```
@@ -370,6 +403,7 @@ Enter the second number: 5
 ```
 
 ### 5. Percentage Calculations
+
 Calculate what percentage one number is of another:
 
 ```
@@ -392,6 +426,7 @@ Enter the second number: 100
 ## Error Handling Examples
 
 ### Division by Zero
+
 ```
 ➤ Enter operation: /
 Enter the first number: 10
@@ -400,6 +435,7 @@ Enter the second number: 0
 ```
 
 ### Invalid Input
+
 ```
 ➤ Enter operation: +
 Enter the first number: abc
@@ -407,6 +443,7 @@ Enter the first number: abc
 ```
 
 ### Negative Square Root
+
 ```
 ➤ Enter operation: sqrt
 Enter number: -4
@@ -414,6 +451,7 @@ Enter number: -4
 ```
 
 ### Invalid Operation
+
 ```
 ➤ Enter operation: xyz
 ❌ Invalid operation! Please choose a valid operation from the list.
@@ -430,13 +468,14 @@ Enter number: -4
 3. **Check History for Errors**: Use `hist` to review past calculations.
 
 4. **Calculator Shortcuts**:
+
    - Use `q` to quit quickly
    - Press Enter for default log base (10)
    - Use negative numbers for subtraction in memory
 
-4. **Precision**: Results are displayed as floats; for exact integers, ignore `.0`
+5. **Precision**: Results are displayed as floats; for exact integers, ignore `.0`
 
-5. **Trigonometry**: Remember that all angles are in DEGREES, not radians.
+6. **Trigonometry**: Remember that all angles are in DEGREES, not radians.
 
 ---
 

@@ -1,5 +1,6 @@
 import math
 import json
+import re
 from datetime import datetime
 
 # Global variables for calculator memory and history
@@ -149,6 +150,62 @@ def export_history(filename="calculator_history.json"):
     except Exception as e:
         return f"Error exporting history: {str(e)}"
 
+# ----------- Expression Evaluator -----------
+def evaluate_expression(expression):
+    """
+    Safely evaluate a mathematical expression.
+    Supports +, -, *, /, ^, %, parentheses, and common functions.
+    
+    Args:
+        expression: String containing the mathematical expression
+        
+    Returns:
+        Result of the evaluation or error message
+        
+    Examples:
+        "2+3*4" -> 14
+        "(10+5)/3" -> 5.0
+        "sqrt(16)+2^3" -> 12.0
+    """
+    try:
+        # Replace ^ with ** for power operation
+        expression = expression.replace('^', '**')
+        
+        # Create a safe namespace with allowed functions
+        safe_namespace = {
+            'sqrt': math.sqrt,
+            'sin': lambda x: math.sin(math.radians(x)),
+            'cos': lambda x: math.cos(math.radians(x)),
+            'tan': lambda x: math.tan(math.radians(x)),
+            'log': math.log10,
+            'ln': math.log,
+            'abs': abs,
+            'pi': math.pi,
+            'e': math.e,
+            '__builtins__': {}  # Prevent access to built-in functions for security
+        }
+        
+        # Validate the expression contains only safe characters
+        # Allow digits, operators, parentheses, spaces, decimal points, and function/constant names
+        allowed_pattern = r'^[\d+\-*/().,\s^*sqrtincoalgbe]+$'
+        if not re.match(allowed_pattern, expression, re.IGNORECASE):
+            return "Error: Expression contains invalid characters!"
+        
+        # Evaluate the expression safely
+        result = eval(expression, safe_namespace, {})
+        
+        # Ensure we return a numeric result
+        if isinstance(result, (int, float)):
+            return result
+        else:
+            return f"Error: Invalid result type!"
+    except ZeroDivisionError:
+        return "Error: Division by zero in expression!"
+    except SyntaxError:
+        return "Error: Invalid expression syntax!"
+    except Exception as e:
+        return f"Error: {str(e)}"
+
 # ----------- Main Calculator Function -----------
 def calculator():
     print("=" * 70)
@@ -164,6 +221,8 @@ def calculator():
     print("    cos  : Cosine (degrees)   tan : Tangent (degrees)")
     print("    log  : Logarithm          ln  : Natural Log")
     print("    !    : Factorial          abs : Absolute Value")
+    print("\n  Expression Mode:")
+    print("    expr : Evaluate full expressions (e.g., '2+3*4', 'sqrt(16)+5')")
     print("\n  Memory Functions:")
     print("    mc   : Memory Clear       mr  : Memory Recall")
     print("    m+   : Memory Add         m-  : Memory Subtract")
@@ -194,6 +253,18 @@ def calculator():
             continue
         elif operation == 'export':
             print(f"✅ {export_history()}")
+            continue
+
+        # Expression evaluator
+        if operation == 'expr':
+            expression = input("Enter mathematical expression: ").strip()
+            if expression:
+                result = evaluate_expression(expression)
+                print(f"✅ Result: {result}")
+                if not isinstance(result, str):  # Don't add errors to history
+                    add_to_history(expression, result)
+            else:
+                print("❌ No expression provided!")
             continue
 
         # Memory operations

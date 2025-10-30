@@ -10,19 +10,28 @@ An advanced command-line calculator built with Python, featuring basic arithmeti
 ## ✨ Features
 
 ### Basic Operations
+
 - ➕ Addition
-- ➖ Subtraction  
+- ➖ Subtraction
 - ✖️ Multiplication
 - ➗ Division (with zero-division protection)
 - 🔺 Power (exponentiation)
 - 📐 Modulus
 
 ### Scientific Functions
+
 - √ **Square Root** - Calculate square roots
 - 📊 **Trigonometry** - Sine, Cosine, Tangent (in degrees)
 - 📈 **Logarithms** - Base-10 logarithm and natural logarithm
 - ❗ **Factorial** - Calculate factorials
 - |x| **Absolute Value** - Get absolute values
+
+### Expression Evaluator 🆕
+- 📐 **Full Expression Evaluation** - Calculate complete expressions in one go
+- 🔢 **Support for**: `2+3*4`, `(10+5)/3`, `sqrt(16)+2^3`
+- 🔗 **Function Chaining** - Combine multiple operations and functions
+- 🎯 **Mathematical Constants** - Use `pi` and `e` in expressions
+- 📖 **Full Guide**: See [EXPRESSION_GUIDE.md](EXPRESSION_GUIDE.md) for detailed usage
 
 ### Memory Functions
 - 💾 **Memory Store (MS)** - Store values in memory
@@ -32,12 +41,14 @@ An advanced command-line calculator built with Python, featuring basic arithmeti
 - 🗑️ **Memory Clear (MC)** - Clear memory
 
 ### History Features
+
 - 📜 **Calculation History** - Track all calculations with timestamps
 - 💾 **Export History** - Save history to JSON file
 - 🔍 **View History** - Review past calculations
 - 🗑️ **Clear History** - Remove all history
 
 ### Error Handling
+
 - ✅ Input validation
 - ⚠️ Division by zero protection
 - 🛡️ Invalid operation handling
@@ -46,16 +57,19 @@ An advanced command-line calculator built with Python, featuring basic arithmeti
 ## 🚀 Installation
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/induwara-dissanayake/Calculator-Python-Language.git
    ```
 
 2. **Navigate to the project folder:**
+
    ```bash
    cd Calculator-Python-Language
    ```
 
 3. **Install optional dependencies (for testing):**
+
    ```bash
    pip install -r requirements.txt
    ```
@@ -68,6 +82,7 @@ An advanced command-line calculator built with Python, featuring basic arithmeti
 ## 📖 Usage
 
 ### Basic Operations Example:
+
 ```
 ➤ Enter operation or 'q' to quit: +
 Enter the first number: 15
@@ -76,6 +91,7 @@ Enter the second number: 7
 ```
 
 ### Scientific Functions Example:
+
 ```
 ➤ Enter operation or 'q' to quit: sqrt
 Enter number: 16
@@ -87,6 +103,7 @@ Enter number: 30
 ```
 
 ### Memory Operations Example:
+
 ```
 ➤ Enter operation or 'q' to quit: ms
 Enter value: 100
@@ -101,6 +118,7 @@ Enter value: 50
 ```
 
 ### History Features Example:
+
 ```
 ➤ Enter operation or 'q' to quit: hist
 
@@ -125,6 +143,7 @@ python -m pytest test_calculator.py -v
 ```
 
 The test suite includes:
+
 - ✅ 40+ unit tests
 - 🧪 Tests for all operations
 - 🛡️ Edge case testing
@@ -132,35 +151,36 @@ The test suite includes:
 
 ## 📋 Available Commands
 
-| Command | Description | Usage |
-|---------|-------------|-------|
-| `+` | Addition | Requires 2 numbers |
-| `-` | Subtraction | Requires 2 numbers |
-| `*` | Multiplication | Requires 2 numbers |
-| `/` | Division | Requires 2 numbers |
-| `^` | Power | Requires 2 numbers |
-| `%` | Modulus | Requires 2 numbers |
-| `sqrt` | Square Root | Requires 1 number |
-| `sin` | Sine | Requires 1 number (degrees) |
-| `cos` | Cosine | Requires 1 number (degrees) |
-| `tan` | Tangent | Requires 1 number (degrees) |
-| `log` | Logarithm | Requires number and base |
-| `ln` | Natural Log | Requires 1 number |
-| `!` | Factorial | Requires 1 integer |
-| `abs` | Absolute Value | Requires 1 number |
-| `mc` | Memory Clear | No input needed |
-| `mr` | Memory Recall | No input needed |
-| `m+` | Memory Add | Requires 1 number |
-| `m-` | Memory Subtract | Requires 1 number |
-| `ms` | Memory Store | Requires 1 number |
-| `hist` | Show History | No input needed |
-| `clear` | Clear History | No input needed |
-| `export` | Export History | No input needed |
-| `q` | Quit | No input needed |
+| Command  | Description     | Usage                       |
+| -------- | --------------- | --------------------------- |
+| `+`      | Addition        | Requires 2 numbers          |
+| `-`      | Subtraction     | Requires 2 numbers          |
+| `*`      | Multiplication  | Requires 2 numbers          |
+| `/`      | Division        | Requires 2 numbers          |
+| `^`      | Power           | Requires 2 numbers          |
+| `%`      | Modulus         | Requires 2 numbers          |
+| `sqrt`   | Square Root     | Requires 1 number           |
+| `sin`    | Sine            | Requires 1 number (degrees) |
+| `cos`    | Cosine          | Requires 1 number (degrees) |
+| `tan`    | Tangent         | Requires 1 number (degrees) |
+| `log`    | Logarithm       | Requires number and base    |
+| `ln`     | Natural Log     | Requires 1 number           |
+| `!`      | Factorial       | Requires 1 integer          |
+| `abs`    | Absolute Value  | Requires 1 number           |
+| `mc`     | Memory Clear    | No input needed             |
+| `mr`     | Memory Recall   | No input needed             |
+| `m+`     | Memory Add      | Requires 1 number           |
+| `m-`     | Memory Subtract | Requires 1 number           |
+| `ms`     | Memory Store    | Requires 1 number           |
+| `hist`   | Show History    | No input needed             |
+| `clear`  | Clear History   | No input needed             |
+| `export` | Export History  | No input needed             |
+| `q`      | Quit            | No input needed             |
 
 ## 🤝 Contributing
 
 Contributions are welcome! This project is perfect for:
+
 - 🎃 **Hacktoberfest** participants
 - 🎓 **Beginners** learning Python
 - 👨‍💻 **Developers** wanting to add features
@@ -168,6 +188,7 @@ Contributions are welcome! This project is perfect for:
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ### Quick Start for Contributors:
+
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
 3. Make your changes

@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added - Major Feature Release 🎉
 
 #### Scientific Functions
+
 - Square root calculation
 - Trigonometric functions (sine, cosine, tangent) with degree input
 - Logarithm functions (base-10 and natural logarithm)
@@ -17,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Absolute value function
 
 #### Memory Operations
+
 - Memory Clear (MC) - Clear stored memory
 - Memory Recall (MR) - Retrieve stored value
 - Memory Add (M+) - Add to memory
@@ -24,12 +26,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Memory Store (MS) - Store new value
 
 #### History Features
+
 - Automatic calculation history tracking with timestamps
 - View calculation history command
 - Clear history command
 - Export history to JSON file functionality
 
 #### Testing & Quality
+
 - Comprehensive unit test suite with 40+ tests
 - Tests for all basic operations
 - Tests for all scientific functions
@@ -37,6 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Edge case and error condition testing
 
 #### Documentation
+
 - Enhanced README with feature showcase
 - CONTRIBUTING.md with detailed guidelines
 - requirements.txt for optional dependencies
@@ -45,18 +50,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - This CHANGELOG
 
 #### User Experience
+
 - Improved UI with better formatting and emojis
 - Enhanced error messages with clear feedback
 - Operation reference menu at startup
 - Better input validation
 
 ### Changed
+
 - Upgraded calculator interface with better visual design
 - Reorganized code structure with clear function categories
 - Improved error handling across all operations
 - Enhanced command-line prompts and output
 
 ### Technical Improvements
+
 - Added `math` module for scientific calculations
 - Added `json` module for history export
 - Added `datetime` module for timestamps
@@ -66,6 +74,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - Previous Version
 
 ### Initial Release
+
 - Basic arithmetic operations (addition, subtraction, multiplication, division)
 - Power and modulus operations
 - Simple command-line interface
@@ -77,18 +86,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Future Versions (Planned)
 
 ### [2.1.0] - Planned
+
 - GUI interface using tkinter
 - Complex number support
 - More trigonometric functions (arcsin, arccos, arctan)
 - Hyperbolic functions
 
 ### [2.2.0] - Planned
+
 - Matrix operations
 - Statistical functions (mean, median, mode, std dev)
 - Unit conversion features
 - Currency conversion
 
 ### [3.0.0] - Planned
+
 - Web interface
 - Graphing capabilities
 - Equation solver

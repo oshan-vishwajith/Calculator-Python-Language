@@ -21,6 +21,7 @@ python calculator.py
 ## 🎮 Step 3: Try Basic Operations (1 minute)
 
 ### Simple Addition
+
 ```
 ➤ Enter operation: +
 Enter the first number: 10
@@ -29,6 +30,7 @@ Enter the second number: 5
 ```
 
 ### Scientific Function
+
 ```
 ➤ Enter operation: sqrt
 Enter number: 16
@@ -36,6 +38,7 @@ Enter number: 16
 ```
 
 ### View Your History
+
 ```
 ➤ Enter operation: hist
 
@@ -49,15 +52,18 @@ Enter number: 16
 ## 🎓 What's Next?
 
 ### Learn More Features
+
 - 📖 Read [EXAMPLES.md](EXAMPLES.md) for detailed usage examples
 - 📚 Check [README.md](README.md) for complete feature list
 
 ### Contribute
+
 - 🤝 Read [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines
 - 🎃 Perfect for Hacktoberfest contributions!
 - 🐛 Report bugs or suggest features via GitHub Issues
 
 ### Run Tests
+
 ```bash
 python -m unittest test_calculator.py -v
 ```
@@ -71,14 +77,14 @@ python -m unittest test_calculator.py -v
 
 ## 📋 Most Useful Operations
 
-| Operation | Command | Example |
-|-----------|---------|---------|
-| Add | `+` | 10 + 5 = 15 |
-| Square Root | `sqrt` | √16 = 4 |
-| Sine | `sin` | sin(30°) = 0.5 |
-| Power | `^` | 2^10 = 1024 |
-| View History | `hist` | Shows all calculations |
-| Store in Memory | `ms` | Stores value |
+| Operation       | Command | Example                |
+| --------------- | ------- | ---------------------- |
+| Add             | `+`     | 10 + 5 = 15            |
+| Square Root     | `sqrt`  | √16 = 4                |
+| Sine            | `sin`   | sin(30°) = 0.5         |
+| Power           | `^`     | 2^10 = 1024            |
+| View History    | `hist`  | Shows all calculations |
+| Store in Memory | `ms`    | Stores value           |
 
 ## 🆘 Need Help?
 
@@ -89,6 +95,7 @@ python -m unittest test_calculator.py -v
 ## ⚡ Pro Mode
 
 Chain calculations using memory:
+
 ```
 1. Calculate: 5 + 5 = 10
 2. Store: ms (stores 10)

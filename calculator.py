@@ -1,12 +1,3 @@
-"""
-Python Calculator 🧮
-A simple interactive command-line calculator supporting basic arithmetic.
-Author: ChatGPT (updated)
-Requirements: Python 3.x
-"""
-
-# ----------- Functions for each operation -----------
-
 # Addition
 def add(x, y):
     return x + y
@@ -63,8 +54,8 @@ def calculator():
 
         # Input numbers, handle non-numeric input error
         try:
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
+            num1 = float(input("Enter the first number: "))
+            num2 = float(input("Enter the second number: "))
         except ValueError:
             print("❌ Invalid input! Please enter numeric values.\n")
             continue

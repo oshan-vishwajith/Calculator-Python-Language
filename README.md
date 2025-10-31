@@ -5,7 +5,8 @@
 ![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen)
 ![Hacktoberfest](https://img.shields.io/badge/hacktoberfest-friendly-orange)
 
-An advanced command line calculator built with Python, featuring basic arithmetic, scientific functions, memory operations, and calculation history tracking. Perfect for students, developers, and Hacktoberfest contributors!
+
+An advanced Python-based command-line calculator that supports basic arithmetic, scientific computations, memory functions, and calculation history tracking. Ideal for students, developers, and open-source enthusiasts participating in Hacktoberfest.
 
 ## ✨ Features
 

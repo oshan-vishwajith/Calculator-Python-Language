@@ -15,7 +15,7 @@ An advanced Python-based command-line calculator that supports basic arithmetic,
 - ➕ Addition
 - ➖ Subtraction
 - ✖️ Multiplication
-- ➗ Division (with zero-division protection)
+- ➗ Division (with zero division protection)
 - 🔺 Power (exponentiation)
 - 📐 Modulus
 
@@ -200,23 +200,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ## 🎯 Future Enhancements
 
-🖥️ Graphical User Interface (GUI)
-
-🔢 Complex Number Support
-
-🧮 Matrix Operations
-
-🧩 Equation Solver
-
-📏 Unit Conversions
-
-📊 Statistical Functions
-
-📈 Graphing Capabilities
-
-🌐 Web Interface
-
-📱 Mobile App Version
+- [ ] Graphical User Interface (GUI)
+- [ ] Complex number support
+- [ ] Matrix operations
+- [ ] Equation solver
+- [ ] Unit conversions
+- [ ] Statistical functions
+- [ ] Graphing capabilities
+- [ ] Web interface
+- [ ] Mobile app version
 
 ## 📝 Requirements
 

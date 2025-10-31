@@ -15,6 +15,7 @@ Enter mathematical expression: 2+3*4
 ## ✨ Features
 
 ### Basic Operations
+
 - **Addition**: `5+3` → 8
 - **Subtraction**: `10-4` → 6
 - **Multiplication**: `6*7` → 42
@@ -23,7 +24,9 @@ Enter mathematical expression: 2+3*4
 - **Modulus**: `17%5` → 2
 
 ### Parentheses Support
+
 Control order of operations with parentheses:
+
 ```
 (2+3)*4     → 20
 2+3*4       → 14
@@ -32,35 +35,34 @@ Control order of operations with parentheses:
 ```
 
 ### Scientific Functions
+
 Use built-in scientific functions:
+
 - **sqrt(x)**: Square root
   - `sqrt(16)` → 4
   - `sqrt(2)` → 1.414...
-  
 - **sin(x)**, **cos(x)**, **tan(x)**: Trigonometric functions (degrees)
   - `sin(30)` → 0.5
   - `cos(60)` → 0.5
-  
 - **log(x)**: Base-10 logarithm
   - `log(100)` → 2
-  
 - **ln(x)**: Natural logarithm
   - `ln(2.71828)` → 1
-  
 - **abs(x)**: Absolute value
   - `abs(-5)` → 5
 
 ### Mathematical Constants
+
 - **pi**: π (≈ 3.14159)
   - `pi*2` → 6.283...
   - `2*pi` → 6.283...
-  
 - **e**: Euler's number (≈ 2.71828)
   - `e+1` → 3.718...
 
 ## 📋 Examples
 
 ### Simple Expressions
+
 ```
 Expression: 10+20
 Result: 30
@@ -73,6 +75,7 @@ Result: 144
 ```
 
 ### Complex Expressions
+
 ```
 Expression: (5+3)*(10-2)
 Result: 64
@@ -85,6 +88,7 @@ Result: 25
 ```
 
 ### Scientific Calculations
+
 ```
 Expression: sqrt(144)+sqrt(16)
 Result: 16
@@ -102,6 +106,7 @@ Result: 18
 ### Practical Examples
 
 #### Calculate Circle Circumference
+
 ```
 Expression: 2*pi*5
 Result: 31.41592653589793
@@ -109,6 +114,7 @@ Result: 31.41592653589793
 ```
 
 #### Pythagorean Theorem
+
 ```
 Expression: sqrt(3**2 + 4**2)
 Result: 5.0
@@ -116,6 +122,7 @@ Result: 5.0
 ```
 
 #### Compound Calculation
+
 ```
 Expression: (100+50)*1.15
 Result: 172.5
@@ -123,6 +130,7 @@ Result: 172.5
 ```
 
 #### Area Calculation
+
 ```
 Expression: pi*10**2
 Result: 314.1592653589793
@@ -132,34 +140,42 @@ Result: 314.1592653589793
 ## ⚠️ Important Notes
 
 ### Order of Operations
+
 The expression evaluator follows standard mathematical order (PEMDAS):
+
 1. **P**arentheses
 2. **E**xponents (^)
 3. **M**ultiplication & **D**ivision (left to right)
 4. **A**ddition & **S**ubtraction (left to right)
 
 ### Angle Units
+
 - All trigonometric functions use **degrees**, not radians
 - `sin(90)` = 1 (not sin(π/2))
 
 ### Power Operator
+
 - Both `^` and `**` work for exponentiation
 - `2^3` is the same as `2**3`
 
 ### Spaces
+
 - Spaces are optional and ignored
 - `2 + 3` is the same as `2+3`
 
 ## 🛡️ Safety Features
 
 ### Secure Evaluation
+
 - Expressions are validated before evaluation
 - Only safe mathematical operations allowed
 - No access to system functions
 - Protected against code injection
 
 ### Error Handling
+
 Invalid expressions return helpful error messages:
+
 ```
 Expression: 10/0
 Result: Error: Division by zero in expression!
@@ -182,6 +198,7 @@ Result: Error: Invalid expression syntax!
 ## 📊 Comparison: Old vs New
 
 ### Old Method (Step-by-Step)
+
 ```
 ➤ Enter operation: +
 Enter first number: 2
@@ -195,6 +212,7 @@ Enter second number: 4
 ```
 
 ### New Method (Expression)
+
 ```
 ➤ Enter operation: expr
 Enter mathematical expression: (2+3)*4
@@ -204,19 +222,25 @@ Enter mathematical expression: (2+3)*4
 ## 🎯 Use Cases
 
 ### Quick Calculations
+
 Perfect for when you know the exact formula:
+
 - Financial calculations: `1000*1.05**5`
 - Unit conversions: `100*2.54` (inches to cm)
 - Percentage: `250*0.15` (15% of 250)
 
 ### Scientific Work
+
 Ideal for formulas and equations:
+
 - Physics: `0.5*9.8*10**2` (free fall distance)
 - Geometry: `4*pi*5**2` (sphere surface area)
 - Engineering calculations
 
 ### Learning Tool
+
 Great for students learning:
+
 - Order of operations
 - Function composition
 - Mathematical expressions
@@ -224,6 +248,7 @@ Great for students learning:
 ## 🔄 History Integration
 
 All expression evaluations are saved to history:
+
 ```
 ➤ Enter operation: hist
 

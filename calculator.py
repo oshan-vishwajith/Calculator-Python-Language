@@ -18,7 +18,7 @@ from tkinter import messagebox
 calculator_memory = 0
 calculation_history = []
 
-### ----------- Basic Arithmetic Functions -----------
+# ----------- Basic Arithmetic Functions -----------
 def add(x, y):
     return x + y
 
@@ -30,8 +30,9 @@ def multiply(x, y):
 
 def divide(x, y):
     if y == 0:
-        return "Error: Division by zero is not allowed!"
+        return float('inf')
     return x / y
+
 
 def power(x, y):
     return x ** y
@@ -41,7 +42,7 @@ def modulus(x, y):
         return "Error: Modulus by zero is not allowed!"
     return x % y
 
-### ----------- Scientific Functions -----------
+# ----------- Scientific Functions -----------
 def square_root(x):
     if x < 0:
         return "Error: Cannot calculate square root of negative number!"
@@ -78,7 +79,7 @@ def factorial(x):
 def absolute_value(x):
     return abs(x)
 
-### ----------- Memory Functions -----------
+# ----------- Memory Functions -----------
 def memory_clear():
     global calculator_memory
     calculator_memory = 0
@@ -102,7 +103,7 @@ def memory_store(value):
     calculator_memory = value
     return f"Stored {value} in memory"
 
-### ----------- History Functions -----------
+# ----------- History Functions -----------
 def add_to_history(operation, result):
     global calculation_history
     entry = {
@@ -138,7 +139,7 @@ def export_history(filename="calculator_history.json"):
     except Exception as e:
         return f"Error exporting history: {str(e)}"
 
-### ----------- Expression Evaluator -----------
+# ----------- Expression Evaluator -----------
 def evaluate_expression(expression):
     try:
         expression = expression.replace('^', '**')
@@ -173,7 +174,7 @@ def evaluate_expression(expression):
     except Exception as e:
         return f"Error: {str(e)}"
 
-### ----------- Main Calculator Function -----------
+# ----------- Main Calculator Function -----------
 def calculator():
     print("=" * 70)
     print("🧮 Welcome to Advanced Python Calculator 🧮")
@@ -329,7 +330,7 @@ def calculator():
         if not isinstance(result, str):
             add_to_history(op_str, result)
 
-### ----------- Extra Features -----------
+# ----------- Extra Features -----------
 def run_tests():
     print("\n🧩 Running basic tests...")
     assert add(2,3) == 5
@@ -363,7 +364,7 @@ def launch_gui():
 
     window.mainloop()
 
-### ----------- Program Entry -----------
+# ----------- Program Entry -----------
 if __name__ == "__main__":
     print("\n📘 MAIN MENU")
     print("1. Run Calculator (Text Mode)")

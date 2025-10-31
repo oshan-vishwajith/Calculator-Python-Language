@@ -6,7 +6,8 @@
 ![Hacktoberfest](https://img.shields.io/badge/hacktoberfest-friendly-orange)
 
 
-An advanced Python-based command-line calculator that supports basic arithmetic, scientific computations, memory functions, and calculation history tracking. Ideal for students, developers, and open-source enthusiasts participating in Hacktoberfest.
+Advanced Python Calculator – A powerful command-line calculator featuring basic arithmetic, scientific functions, memory operations, and calculation history tracking.
+Ideal for students, developers, and Hacktoberfest contributors looking for a versatile and easy-to-use math tool!
 
 ## ✨ Features
 

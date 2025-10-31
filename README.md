@@ -7,7 +7,7 @@
 
 An advanced command-line calculator built with Python, featuring basic arithmetic, scientific functions, memory operations, and calculation history tracking. Perfect for students, developers, and Hacktoberfest contributors!
 
-## ✨ FEATURES
+## ✨ Features
 
 ### Basic Operations
 
@@ -21,7 +21,7 @@ An advanced command-line calculator built with Python, featuring basic arithmeti
 ### Scientific Functions
 
 - √ **Square Root** - Calculate square roots
-- 📊 **Trigonometry** - Sine, Cosine, Tangent (in degrees)
+- 📊 **Trigonometry** - Sine, Cosine, Tangent (degrees)
 - 📈 **Logarithms** - Base-10 logarithm and natural logarithm
 - ❗ **Factorial** - Calculate factorials
 - |x| **Absolute Value** - Get absolute values

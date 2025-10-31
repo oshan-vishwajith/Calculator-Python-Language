@@ -205,7 +205,7 @@ def calculator():
         operation = input("\n➤ Enter operation or 'q' to quit: ").strip().lower()
         if operation == 'q':
             print("\n" + "=" * 70)
-            print("👋 Goodbye! Thanks for using Advanced Python Calculator.")
+            print(" Goodbye! Thanks for using Advanced Python Calculator.")
             print("=" * 70)
             break
 

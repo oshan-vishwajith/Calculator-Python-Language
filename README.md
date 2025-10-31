@@ -8,9 +8,9 @@
 
 An advanced Python-based command-line calculator that supports basic arithmetic, scientific computations, memory functions, and calculation history tracking. Ideal for students, developers, and open-source enthusiasts participating in Hacktoberfest.
 
-## ✨ Features
+## ✨ Key Features
 
-###  Basic Operations
+### Basic Operations
 
 - ➕ Addition
 - ➖ Subtraction
@@ -19,7 +19,7 @@ An advanced Python-based command-line calculator that supports basic arithmetic,
 - 🔺 Power (exponentiation)
 - 📐 Modulus
 
-###  Scientific Functions
+### Scientific Functions
 
 - √ **Square Root** - Calculate square roots
 - 📊 **Trigonometry** - Sine, Cosine, Tangent (degrees)
@@ -27,14 +27,14 @@ An advanced Python-based command-line calculator that supports basic arithmetic,
 - ❗ **Factorial** - Calculate factorials
 - |x| **Absolute Value** - Get absolute values
 
-###  Expression Evaluator 🆕
+### Expression Evaluator 🆕
 - 📐 **Full Expression Evaluation** - Calculate complete expressions in one go
 - 🔢 **Support for**: `2+3*4`, `(10+5)/3`, `sqrt(16)+2^3`
 - 🔗 **Function Chaining** - Combine multiple operations and functions
 - 🎯 **Mathematical Constants** - Use `pi` and `e` in expressions
 - 📖 **Full Guide**: See [EXPRESSION_GUIDE.md](EXPRESSION_GUIDE.md) for detailed usage
 
-###  Memory Functions
+### Memory Functions
 - 💾 **Memory Store (MS)** - Store values in memory
 - 🔄 **Memory Recall (MR)** - Retrieve stored values
 - ➕ **Memory Add (M+)** - Add to memory
@@ -51,7 +51,7 @@ An advanced Python-based command-line calculator that supports basic arithmetic,
 
 🧹 Clear History (clear) — Erase all stored calculations and start fresh.
 
-###  Error Handling
+### Error Handling
 
 - ✅ Input validation
 - ⚠️ Division by zero protection

@@ -5,8 +5,7 @@
 ![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen)
 ![Hacktoberfest](https://img.shields.io/badge/hacktoberfest-friendly-orange)
 
-
-An advanced Python-based command-line calculator that supports basic arithmetic, scientific computations, memory functions, and calculation history tracking. Ideal for students, developers, and open-source enthusiasts participating in Hacktoberfest.
+An advanced command-line calculator built with Python, featuring basic arithmetic, scientific functions, memory operations, and calculation history tracking. Perfect for students, developers, and Hacktoberfest contributors!
 
 ## ✨ Features
 
@@ -47,6 +46,7 @@ An advanced Python-based command-line calculator that supports basic arithmetic,
 - 💾 **Export History** - Save history to JSON file
 - 🔍 **View History** - Review past calculations
 - 🗑️ **Clear History** - Remove all history
+- 📊 **Summary (History Stats)**  - View overall statistics including total calculations, most used operation, and count of basic vs scientific operations
 
 ### Error Handling
 
@@ -125,9 +125,9 @@ Enter value: 50
 
 📜 Calculation History:
 ------------------------------------------------------------
-i. [2025-10-31 10:15:23] 15 + 7 = 22.0
-ii. [2025-10-31 10:16:45] √16 = 4.0
-iii. [2025-10-31 10:17:30] sin(30°) = 0.5
+1. [2025-10-31 10:15:23] 15 + 7 = 22.0
+2. [2025-10-31 10:16:45] √16 = 4.0
+3. [2025-10-31 10:17:30] sin(30°) = 0.5
 ------------------------------------------------------------
 ```
 
@@ -200,23 +200,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ## 🎯 Future Enhancements
 
-🖥️ Graphical User Interface (GUI)
-
-🔢 Complex Number Support
-
-🧮 Matrix Operations
-
-🧩 Equation Solver
-
-📏 Unit Conversions
-
-📊 Statistical Functions
-
-📈 Graphing Capabilities
-
-🌐 Web Interface
-
-📱 Mobile App Version
+- [ ] Graphical User Interface (GUI)
+- [ ] Complex number support
+- [ ] Matrix operations
+- [ ] Equation solver
+- [ ] Unit conversions
+- [ ] Statistical functions
+- [ ] Graphing capabilities
+- [ ] Web interface
+- [ ] Mobile app version
 
 ## 📝 Requirements
 

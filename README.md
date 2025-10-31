@@ -199,15 +199,23 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ## 🎯 Future Enhancements
 
-- [ ] Graphical User Interface (GUI)
-- [ ] Complex number support
-- [ ] Matrix operations
-- [ ] Equation solver
-- [ ] Unit conversions
-- [ ] Statistical functions
-- [ ] Graphing capabilities
-- [ ] Web interface
-- [ ] Mobile app version
+🖥️ Graphical User Interface (GUI)
+
+🔢 Complex Number Support
+
+🧮 Matrix Operations
+
+🧩 Equation Solver
+
+📏 Unit Conversions
+
+📊 Statistical Functions
+
+📈 Graphing Capabilities
+
+🌐 Web Interface
+
+📱 Mobile App Version
 
 ## 📝 Requirements
 

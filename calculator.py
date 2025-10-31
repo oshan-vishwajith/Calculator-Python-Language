@@ -126,7 +126,7 @@ def show_history():
 def clear_history():
     global calculation_history
     calculation_history = []
-    return "History cleared"
+    return "History cleared!"
 
 def export_history(filename="calculator_history.json"):
     if not calculation_history:

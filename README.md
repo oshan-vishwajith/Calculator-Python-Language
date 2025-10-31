@@ -9,7 +9,7 @@ An advanced command-line calculator built with Python, featuring basic arithmeti
 
 ## ✨ Features
 
-### Basic Operations
+###  Basic Operations
 
 - ➕ Addition
 - ➖ Subtraction
@@ -18,7 +18,7 @@ An advanced command-line calculator built with Python, featuring basic arithmeti
 - 🔺 Power (exponentiation)
 - 📐 Modulus
 
-### Scientific Functions
+###  Scientific Functions
 
 - √ **Square Root** - Calculate square roots
 - 📊 **Trigonometry** - Sine, Cosine, Tangent (in degrees)
@@ -26,28 +26,28 @@ An advanced command-line calculator built with Python, featuring basic arithmeti
 - ❗ **Factorial** - Calculate factorials
 - |x| **Absolute Value** - Get absolute values
 
-### Expression Evaluator 🆕
+###  Expression Evaluator 🆕
 - 📐 **Full Expression Evaluation** - Calculate complete expressions in one go
 - 🔢 **Support for**: `2+3*4`, `(10+5)/3`, `sqrt(16)+2^3`
 - 🔗 **Function Chaining** - Combine multiple operations and functions
 - 🎯 **Mathematical Constants** - Use `pi` and `e` in expressions
 - 📖 **Full Guide**: See [EXPRESSION_GUIDE.md](EXPRESSION_GUIDE.md) for detailed usage
 
-### Memory Functions
+###  Memory Functions
 - 💾 **Memory Store (MS)** - Store values in memory
 - 🔄 **Memory Recall (MR)** - Retrieve stored values
 - ➕ **Memory Add (M+)** - Add to memory
 - ➖ **Memory Subtract (M-)** - Subtract from memory
 - 🗑️ **Memory Clear (MC)** - Clear memory
 
-### History Features
+###  History Features
 
 - 📜 **Calculation History** - Track all calculations with timestamps
 - 💾 **Export History** - Save history to JSON file
 - 🔍 **View History** - Review past calculations
 - 🗑️ **Clear History** - Remove all history
 
-### Error Handling
+###  Error Handling
 
 - ✅ Input validation
 - ⚠️ Division by zero protection

@@ -10,7 +10,7 @@ An advanced Python-based command-line calculator that supports basic arithmetic,
 
 ## ✨ Features
 
-###  Basic Operations
+### Basic Operations
 
 - ➕ Addition
 - ➖ Subtraction
@@ -19,7 +19,7 @@ An advanced Python-based command-line calculator that supports basic arithmetic,
 - 🔺 Power (exponentiation)
 - 📐 Modulus
 
-###  Scientific Functions
+### Scientific Functions
 
 - √ **Square Root** - Calculate square roots
 - 📊 **Trigonometry** - Sine, Cosine, Tangent (degrees)
@@ -27,14 +27,14 @@ An advanced Python-based command-line calculator that supports basic arithmetic,
 - ❗ **Factorial** - Calculate factorials
 - |x| **Absolute Value** - Get absolute values
 
-###  Expression Evaluator 🆕
+### Expression Evaluator 🆕
 - 📐 **Full Expression Evaluation** - Calculate complete expressions in one go
 - 🔢 **Support for**: `2+3*4`, `(10+5)/3`, `sqrt(16)+2^3`
 - 🔗 **Function Chaining** - Combine multiple operations and functions
 - 🎯 **Mathematical Constants** - Use `pi` and `e` in expressions
 - 📖 **Full Guide**: See [EXPRESSION_GUIDE.md](EXPRESSION_GUIDE.md) for detailed usage
 
-###  Memory Functions
+### Memory Functions
 - 💾 **Memory Store (MS)** - Store values in memory
 - 🔄 **Memory Recall (MR)** - Retrieve stored values
 - ➕ **Memory Add (M+)** - Add to memory
@@ -47,11 +47,11 @@ An advanced Python-based command-line calculator that supports basic arithmetic,
 
 👁️ View History (hist) — Instantly display your previous calculations in an easy-to-read list.
 
-💾 Export History (export) — Save your full calculation history as a JSON file for later reference or sharing.
+💾 Export History (export) —Save your complete calculation history as a detailed JSON file, including timestamps and results, for documentation, sharing, or later use.
 
-🧹 Clear History (clear) — Erase all stored calculations and start fresh.
+🧹 Clear History (clear) — Remove all stored calculations in one command and start with a fresh, clutter-free workspace anytime.
 
-###  Error Handling
+### Error Handling
 
 - ✅ Input validation
 - ⚠️ Division by zero protection

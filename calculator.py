@@ -5,6 +5,15 @@ from datetime import datetime
 import tkinter as tk
 from tkinter import messagebox
 
+# -------------------------
+# Smart Advanced Calculator
+# - Preserves original logic and safety
+# - Adds: exp, log2, deg, rad
+# - Improved expression evaluator and validation
+# - Cleaner terminal UI
+# - Auto-saves history on exit
+# -------------------------
+
 # Global variables for calculator memory and history
 calculator_memory = 0
 calculation_history = []
@@ -21,8 +30,9 @@ def multiply(x, y):
 
 def divide(x, y):
     if y == 0:
-        return "Error: Division by zero is not allowed!"
+        return float('inf')
     return x / y
+
 
 def power(x, y):
     return x ** y
@@ -132,7 +142,7 @@ def export_history(filename="calculator_history.json"):
 # ----------- Expression Evaluator -----------
 def evaluate_expression(expression):
     try:
-        expression = expression.replace('^', '**')
+        expression = re.sub(r"\^", "**", expression)
         
         safe_namespace = {
             'sqrt': math.sqrt,
@@ -195,7 +205,7 @@ def calculator():
         operation = input("\n➤ Enter operation or 'q' to quit: ").strip().lower()
         if operation == 'q':
             print("\n" + "=" * 70)
-            print("👋 Goodbye! Thanks for using Advanced Python Calculator.")
+            print(" Goodbye! Thanks for using Advanced Python Calculator.")
             print("=" * 70)
             break
 

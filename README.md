@@ -5,7 +5,8 @@
 ![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen)
 ![Hacktoberfest](https://img.shields.io/badge/hacktoberfest-friendly-orange)
 
-An advanced command-line calculator built with Python, featuring basic arithmetic, scientific functions, memory operations, and calculation history tracking. Perfect for students, developers, and Hacktoberfest contributors!
+
+An advanced Python-based command-line calculator that supports basic arithmetic, scientific computations, memory functions, and calculation history tracking. Ideal for students, developers, and open-source enthusiasts participating in Hacktoberfest.
 
 ## ✨ Features
 
@@ -21,7 +22,7 @@ An advanced command-line calculator built with Python, featuring basic arithmeti
 ###  Scientific Functions
 
 - √ **Square Root** - Calculate square roots
-- 📊 **Trigonometry** - Sine, Cosine, Tangent (in degrees)
+- 📊 **Trigonometry** - Sine, Cosine, Tangent (degrees)
 - 📈 **Logarithms** - Base-10 logarithm and natural logarithm
 - ❗ **Factorial** - Calculate factorials
 - |x| **Absolute Value** - Get absolute values
@@ -40,12 +41,15 @@ An advanced command-line calculator built with Python, featuring basic arithmeti
 - ➖ **Memory Subtract (M-)** - Subtract from memory
 - 🗑️ **Memory Clear (MC)** - Clear memory
 
-###  History Features
+🧾 History Features
 
-- 📜 **Calculation History** - Track all calculations with timestamps
-- 💾 **Export History** - Save history to JSON file
-- 🔍 **View History** - Review past calculations
-- 🗑️ **Clear History** - Remove all history
+📅 Automatic Tracking — Every calculation (including expressions and functions) is stored with a timestamp.
+
+👁️ View History (hist) — Instantly display your previous calculations in an easy-to-read list.
+
+💾 Export History (export) — Save your full calculation history as a JSON file for later reference or sharing.
+
+🧹 Clear History (clear) — Erase all stored calculations and start fresh.
 
 ###  Error Handling
 

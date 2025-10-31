@@ -7,7 +7,7 @@
 
 An advanced command-line calculator built with Python, featuring basic arithmetic, scientific functions, memory operations, and calculation history tracking. Perfect for students, developers, and Hacktoberfest contributors!
 
-## ✨ Features
+## ✨ FEATURES
 
 ### Basic Operations
 

@@ -173,7 +173,64 @@ def evaluate_expression(expression):
     except Exception as e:
         return f"Error: {str(e)}"
 
-### ----------- Main Calculator Function -----------
+# ----------- Quick Calculation Templates -----------
+def calculate_percentage(value, percentage):
+    """Calculate percentage of a value"""
+    return (value * percentage) / 100
+
+def calculate_tip(bill_amount, tip_percent, split=1):
+    """Calculate tip amount and total per person"""
+    tip = calculate_percentage(bill_amount, tip_percent)
+    total = bill_amount + tip
+    per_person = total / split
+    return {
+        'tip': tip,
+        'total': total,
+        'per_person': per_person
+    }
+
+def calculate_discount(original_price, discount_percent):
+    """Calculate discounted price"""
+    discount_amount = calculate_percentage(original_price, discount_percent)
+    final_price = original_price - discount_amount
+    return {
+        'discount_amount': discount_amount,
+        'final_price': final_price,
+        'savings': discount_amount
+    }
+
+def calculate_compound_interest(principal, rate, time, compounds_per_year=1):
+    """Calculate compound interest"""
+    amount = principal * (1 + rate / (100 * compounds_per_year)) ** (compounds_per_year * time)
+    interest = amount - principal
+    return {
+        'final_amount': amount,
+        'interest_earned': interest,
+        'principal': principal
+    }
+
+def calculate_bmi(weight_kg, height_m):
+    """Calculate Body Mass Index"""
+    if height_m <= 0:
+        return "Error: Height must be positive!"
+    bmi = weight_kg / (height_m ** 2)
+    
+    # Determine category
+    if bmi < 18.5:
+        category = "Underweight"
+    elif bmi < 25:
+        category = "Normal weight"
+    elif bmi < 30:
+        category = "Overweight"
+    else:
+        category = "Obese"
+    
+    return {
+        'bmi': round(bmi, 2),
+        'category': category
+    }
+
+# ----------- Main Calculator Function -----------
 def calculator():
     print("=" * 70)
     print("🧮 Welcome to Advanced Python Calculator 🧮")
@@ -190,6 +247,10 @@ def calculator():
     print("    !    : Factorial          abs : Absolute Value")
     print("\n  Expression Mode:")
     print("    expr : Evaluate full expressions (e.g., '2+3*4', 'sqrt(16)+5')")
+    print("\n  Quick Calculations:")
+    print("    pct  : Percentage         tip  : Tip Calculator")
+    print("    disc : Discount           ci   : Compound Interest")
+    print("    bmi  : Body Mass Index")
     print("\n  Memory Functions:")
     print("    mc   : Memory Clear       mr  : Memory Recall")
     print("    m+   : Memory Add         m-  : Memory Subtract")
@@ -229,6 +290,94 @@ def calculator():
                 print("❌ No expression provided!")
             continue
 
+        # Quick Calculations
+        if operation == 'pct':
+            try:
+                value = float(input("Enter value: "))
+                percentage = float(input("Enter percentage: "))
+                result = calculate_percentage(value, percentage)
+                print(f"✅ {percentage}% of {value} = {result}")
+                add_to_history(f"{percentage}% of {value}", result)
+            except ValueError:
+                print("❌ Invalid input! Please enter numeric values.")
+            continue
+        
+        elif operation == 'tip':
+            try:
+                bill = float(input("Enter bill amount: "))
+                tip_pct = float(input("Enter tip percentage (e.g., 15, 20): "))
+                split_input = input("Split between how many people? (press Enter for 1): ").strip()
+                split = int(split_input) if split_input else 1
+                
+                result = calculate_tip(bill, tip_pct, split)
+                print(f"\n💰 Tip Calculation:")
+                print(f"   Bill Amount: ${bill:.2f}")
+                print(f"   Tip ({tip_pct}%): ${result['tip']:.2f}")
+                print(f"   Total: ${result['total']:.2f}")
+                if split > 1:
+                    print(f"   Per Person (÷{split}): ${result['per_person']:.2f}")
+                add_to_history(f"Tip: ${bill} + {tip_pct}%", result['total'])
+            except ValueError:
+                print("❌ Invalid input! Please enter numeric values.")
+            continue
+        
+        elif operation == 'disc':
+            try:
+                price = float(input("Enter original price: "))
+                discount = float(input("Enter discount percentage: "))
+                
+                result = calculate_discount(price, discount)
+                print(f"\n🏷️ Discount Calculation:")
+                print(f"   Original Price: ${price:.2f}")
+                print(f"   Discount ({discount}%): -${result['discount_amount']:.2f}")
+                print(f"   Final Price: ${result['final_price']:.2f}")
+                print(f"   You Save: ${result['savings']:.2f}")
+                add_to_history(f"Discount: ${price} - {discount}%", result['final_price'])
+            except ValueError:
+                print("❌ Invalid input! Please enter numeric values.")
+            continue
+        
+        elif operation == 'ci':
+            try:
+                principal = float(input("Enter principal amount: "))
+                rate = float(input("Enter annual interest rate (%): "))
+                time = float(input("Enter time period (years): "))
+                compounds_input = input("Compounds per year (press Enter for 1): ").strip()
+                compounds = int(compounds_input) if compounds_input else 1
+                
+                result = calculate_compound_interest(principal, rate, time, compounds)
+                print(f"\n📈 Compound Interest Calculation:")
+                print(f"   Principal: ${result['principal']:.2f}")
+                print(f"   Rate: {rate}% per year")
+                print(f"   Time: {time} years")
+                print(f"   Compounds: {compounds} times/year")
+                print(f"   Final Amount: ${result['final_amount']:.2f}")
+                print(f"   Interest Earned: ${result['interest_earned']:.2f}")
+                add_to_history(f"CI: ${principal} @ {rate}% for {time}y", result['final_amount'])
+            except ValueError:
+                print("❌ Invalid input! Please enter numeric values.")
+            continue
+        
+        elif operation == 'bmi':
+            try:
+                weight = float(input("Enter weight (kg): "))
+                height = float(input("Enter height (meters): "))
+                
+                result = calculate_bmi(weight, height)
+                if isinstance(result, str):
+                    print(f"❌ {result}")
+                else:
+                    print(f"\n⚕️ BMI Calculation:")
+                    print(f"   Weight: {weight} kg")
+                    print(f"   Height: {height} m")
+                    print(f"   BMI: {result['bmi']}")
+                    print(f"   Category: {result['category']}")
+                    add_to_history(f"BMI: {weight}kg / {height}m", result['bmi'])
+            except ValueError:
+                print("❌ Invalid input! Please enter numeric values.")
+            continue
+
+        # Memory operations
         if operation == 'mc':
             print(f"✅ {memory_clear()}")
             continue

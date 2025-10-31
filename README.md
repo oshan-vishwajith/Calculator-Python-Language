@@ -35,6 +35,14 @@ Ideal for students, developers, and Hacktoberfest contributors looking for a ver
 - 🎯 **Mathematical Constants** - Use `pi` and `e` in expressions
 - 📖 **Full Guide**: See [EXPRESSION_GUIDE.md](EXPRESSION_GUIDE.md) for detailed usage
 
+### Quick Calculations 🆕
+- 💵 **Percentage Calculator** - Calculate percentages instantly
+- 💰 **Tip Calculator** - Calculate tips and split bills
+- 🏷️ **Discount Calculator** - Find final prices after discounts
+- 📈 **Compound Interest** - Calculate investment growth
+- ⚕️ **BMI Calculator** - Calculate Body Mass Index
+- 📖 **Full Guide**: See [QUICK_CALC_GUIDE.md](QUICK_CALC_GUIDE.md) for detailed usage
+
 ### Memory Functions
 - 💾 **Memory Store (MS)** - Store values in memory
 - 🔄 **Memory Recall (MR)** - Retrieve stored values

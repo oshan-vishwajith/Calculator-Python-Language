@@ -11,7 +11,9 @@ from calculator import (
     square_root, sine, cosine, tangent, logarithm, natural_log,
     factorial, absolute_value,
     memory_clear, memory_recall, memory_add, memory_subtract, memory_store,
-    evaluate_expression
+    evaluate_expression,
+    calculate_percentage, calculate_tip, calculate_discount,
+    calculate_compound_interest, calculate_bmi
 )
 
 
@@ -225,6 +227,71 @@ class TestExpressionEvaluator(unittest.TestCase):
         result = evaluate_expression("import os")
         self.assertTrue(isinstance(result, str) and "Error" in result or isinstance(result, (int, float)))
 
+
+class TestQuickCalculations(unittest.TestCase):
+    """Test quick calculation templates"""
+    
+    def test_percentage(self):
+        self.assertEqual(calculate_percentage(100, 10), 10)
+        self.assertEqual(calculate_percentage(200, 50), 100)
+        self.assertEqual(calculate_percentage(50, 20), 10)
+        self.assertAlmostEqual(calculate_percentage(75, 15), 11.25, places=2)
+    
+    def test_tip_calculator(self):
+        # Basic tip calculation
+        result = calculate_tip(100, 15, 1)
+        self.assertEqual(result['tip'], 15)
+        self.assertEqual(result['total'], 115)
+        self.assertEqual(result['per_person'], 115)
+        
+        # Tip with split
+        result = calculate_tip(100, 20, 4)
+        self.assertEqual(result['tip'], 20)
+        self.assertEqual(result['total'], 120)
+        self.assertEqual(result['per_person'], 30)
+    
+    def test_discount_calculator(self):
+        result = calculate_discount(100, 10)
+        self.assertEqual(result['discount_amount'], 10)
+        self.assertEqual(result['final_price'], 90)
+        self.assertEqual(result['savings'], 10)
+        
+        result = calculate_discount(50, 25)
+        self.assertEqual(result['discount_amount'], 12.5)
+        self.assertEqual(result['final_price'], 37.5)
+    
+    def test_compound_interest(self):
+        # Simple annual compounding
+        result = calculate_compound_interest(1000, 5, 1, 1)
+        self.assertAlmostEqual(result['final_amount'], 1050, places=2)
+        self.assertAlmostEqual(result['interest_earned'], 50, places=2)
+        
+        # Multiple years
+        result = calculate_compound_interest(1000, 10, 2, 1)
+        self.assertAlmostEqual(result['final_amount'], 1210, places=0)
+        
+        # Quarterly compounding
+        result = calculate_compound_interest(1000, 4, 1, 4)
+        self.assertAlmostEqual(result['final_amount'], 1040.60, places=1)
+    
+    def test_bmi_calculator(self):
+        # Normal weight
+        result = calculate_bmi(70, 1.75)
+        self.assertAlmostEqual(result['bmi'], 22.86, places=2)
+        self.assertEqual(result['category'], "Normal weight")
+        
+        # Underweight
+        result = calculate_bmi(50, 1.75)
+        self.assertAlmostEqual(result['bmi'], 16.33, places=2)
+        self.assertEqual(result['category'], "Underweight")
+        
+        # Overweight
+        result = calculate_bmi(85, 1.75)
+        self.assertEqual(result['category'], "Overweight")
+        
+        # Error handling
+        result = calculate_bmi(70, 0)
+        self.assertIn("Error", result)
 
 if __name__ == '__main__':
     # Run tests with verbose output

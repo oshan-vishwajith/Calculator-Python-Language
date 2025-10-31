@@ -125,6 +125,8 @@ Enter value: 50
 ### History Features Example:
 
 ```
+-💡 **Tip:** Use `hist` to review your past calculations and spot patterns in your problem-solving!
+
 ➤ Enter operation or 'q' to quit: hist
 
 📜 Calculation History:

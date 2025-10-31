@@ -155,23 +155,10 @@ def evaluate_expression(expression):
     """
     Safely evaluate a mathematical expression.
     Supports +, -, *, /, ^, %, parentheses, and common functions.
-    
-    Args:
-        expression: String containing the mathematical expression
-        
-    Returns:
-        Result of the evaluation or error message
-        
-    Examples:
-        "2+3*4" -> 14
-        "(10+5)/3" -> 5.0
-        "sqrt(16)+2^3" -> 12.0
     """
     try:
-        # Replace ^ with ** for power operation
         expression = expression.replace('^', '**')
         
-        # Create a safe namespace with allowed functions
         safe_namespace = {
             'sqrt': math.sqrt,
             'sin': lambda x: math.sin(math.radians(x)),
@@ -182,19 +169,15 @@ def evaluate_expression(expression):
             'abs': abs,
             'pi': math.pi,
             'e': math.e,
-            '__builtins__': {}  # Prevent access to built-in functions for security
+            '__builtins__': {}
         }
         
-        # Validate the expression contains only safe characters
-        # Allow digits, operators, parentheses, spaces, decimal points, and function/constant names
         allowed_pattern = r'^[\d+\-*/().,\s^*sqrtincoalgbe]+$'
         if not re.match(allowed_pattern, expression, re.IGNORECASE):
             return "Error: Expression contains invalid characters!"
         
-        # Evaluate the expression safely
         result = eval(expression, safe_namespace, {})
         
-        # Ensure we return a numeric result
         if isinstance(result, (int, float)):
             return result
         else:
@@ -206,12 +189,34 @@ def evaluate_expression(expression):
     except Exception as e:
         return f"Error: {str(e)}"
 
+
+# ----------- NEW FEATURE: Summary Function -----------
+def show_summary():
+    """
+     Display a summary of the current calculator session.
+    Shows:
+        - Total calculations performed
+        - Most recent operation and result
+        - Current memory value
+    """
+    print("\n Calculator Summary:")
+    print("-" * 40)
+    print(f"Total calculations: {len(calculation_history)}")
+    if calculation_history:
+        last_entry = calculation_history[-1]
+        print(f"Last operation: {last_entry['operation']} = {last_entry['result']}")
+    else:
+        print("Last operation: None (no calculations yet)")
+    print(f"Memory value: {calculator_memory}")
+    print("-" * 40)
+
+
 # ----------- Main Calculator Function -----------
 def calculator():
     print("=" * 70)
-    print("🧮 Welcome to Advanced Python Calculator 🧮")
+    print(" Welcome to Advanced Python Calculator ")
     print("=" * 70)
-    print("\n📋 Available operations:")
+    print("\n Available operations:")
     print("\n  Basic Operations:")
     print("    + : Addition              - : Subtraction")
     print("    * : Multiplication        / : Division")
@@ -230,17 +235,18 @@ def calculator():
     print("\n  History Functions:")
     print("    hist : Show History       clear : Clear History")
     print("    export : Export History")
+    print("\n  Extra Features:")
+    print("    summary : Show calculator usage summary")  # <-- NEW FEATURE listed here
     print("\n  Type 'q' to quit\n")
     print("=" * 70)
 
     while True:
-        # Take operation input
         operation = input("\n➤ Enter operation or 'q' to quit: ").strip().lower()
         
         # Exit condition
         if operation == 'q':
             print("\n" + "=" * 70)
-            print("👋 Goodbye! Thanks for using Advanced Python Calculator.")
+            print("Goodbye! Thanks for using Advanced Python Calculator.")
             print("=" * 70)
             break
 
@@ -255,13 +261,19 @@ def calculator():
             print(f"✅ {export_history()}")
             continue
 
+        # ----------- NEW COMMAND: summary -----------
+        if operation == 'summary':
+            show_summary()
+            continue
+        # --------------------------------------------
+
         # Expression evaluator
         if operation == 'expr':
             expression = input("Enter mathematical expression: ").strip()
             if expression:
                 result = evaluate_expression(expression)
                 print(f"✅ Result: {result}")
-                if not isinstance(result, str):  # Don't add errors to history
+                if not isinstance(result, str):
                     add_to_history(expression, result)
             else:
                 print("❌ No expression provided!")
@@ -316,7 +328,7 @@ def calculator():
                     op_str = f"|{num}|"
                 
                 print(f"✅ Result: {result}")
-                if not isinstance(result, str):  # Don't add errors to history
+                if not isinstance(result, str):
                     add_to_history(op_str, result)
             except ValueError:
                 print("❌ Invalid input! Please enter a numeric value.")
@@ -342,7 +354,7 @@ def calculator():
             print("❌ Invalid operation! Please choose a valid operation from the list.\n")
             continue
 
-        # Input numbers, handle non-numeric input error
+        # Input numbers
         try:
             num1 = float(input("Enter the first number: "))
             num2 = float(input("Enter the second number: "))
@@ -372,10 +384,9 @@ def calculator():
 
         # Display result and add to history
         print(f"✅ Result: {result}")
-        if not isinstance(result, str):  # Don't add errors to history
+        if not isinstance(result, str):
             add_to_history(op_str, result)
 
 # ----------- Run program -----------
 if __name__ == "__main__":
     calculator()
-

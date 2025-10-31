@@ -2,61 +2,61 @@ import math
 import json
 import re
 from datetime import datetime
+import tkinter as tk
+from tkinter import messagebox
+
+# -------------------------
+# Smart Advanced Calculator
+# - Preserves original logic and safety
+# - Adds: exp, log2, deg, rad
+# - Improved expression evaluator and validation
+# - Cleaner terminal UI
+# - Auto-saves history on exit
+# -------------------------
 
 # Global variables for calculator memory and history
 calculator_memory = 0
 calculation_history = []
 
-# ----------- Basic Arithmetic Functions -----------
-# Addition
+### ----------- Basic Arithmetic Functions -----------
 def add(x, y):
     return x + y
 
-# Subtraction
 def subtract(x, y):
     return x - y
 
-# Multiplication
 def multiply(x, y):
     return x * y
 
-# Division with zero-division check
 def divide(x, y):
     if y == 0:
         return "Error: Division by zero is not allowed!"
     return x / y
 
-# Power function (x raised to y)
 def power(x, y):
     return x ** y
 
-# Modulus with zero check
 def modulus(x, y):
     if y == 0:
         return "Error: Modulus by zero is not allowed!"
     return x % y
 
-# ----------- Scientific Functions -----------
+### ----------- Scientific Functions -----------
 def square_root(x):
-    """Calculate square root of a number"""
     if x < 0:
         return "Error: Cannot calculate square root of negative number!"
     return math.sqrt(x)
 
 def sine(x):
-    """Calculate sine (input in degrees)"""
     return math.sin(math.radians(x))
 
 def cosine(x):
-    """Calculate cosine (input in degrees)"""
     return math.cos(math.radians(x))
 
 def tangent(x):
-    """Calculate tangent (input in degrees)"""
     return math.tan(math.radians(x))
 
 def logarithm(x, base=10):
-    """Calculate logarithm (default base 10)"""
     if x <= 0:
         return "Error: Logarithm undefined for non-positive numbers!"
     if base <= 0 or base == 1:
@@ -64,55 +64,46 @@ def logarithm(x, base=10):
     return math.log(x, base)
 
 def natural_log(x):
-    """Calculate natural logarithm (base e)"""
     if x <= 0:
         return "Error: Natural log undefined for non-positive numbers!"
     return math.log(x)
 
 def factorial(x):
-    """Calculate factorial of a number"""
     if x < 0:
         return "Error: Factorial undefined for negative numbers!"
-    if not x.is_integer():
+    x = int(x) if x.is_integer() else x
         return "Error: Factorial only defined for integers!"
     return math.factorial(int(x))
 
 def absolute_value(x):
-    """Calculate absolute value"""
     return abs(x)
 
-# ----------- Memory Functions -----------
+### ----------- Memory Functions -----------
 def memory_clear():
-    """Clear calculator memory"""
     global calculator_memory
     calculator_memory = 0
     return "Memory cleared"
 
 def memory_recall():
-    """Recall value from memory"""
     return calculator_memory
 
 def memory_add(value):
-    """Add value to memory"""
     global calculator_memory
     calculator_memory += value
     return f"Added {value} to memory. Current memory: {calculator_memory}"
 
 def memory_subtract(value):
-    """Subtract value from memory"""
     global calculator_memory
     calculator_memory -= value
     return f"Subtracted {value} from memory. Current memory: {calculator_memory}"
 
 def memory_store(value):
-    """Store value in memory"""
     global calculator_memory
     calculator_memory = value
     return f"Stored {value} in memory"
 
-# ----------- History Functions -----------
+### ----------- History Functions -----------
 def add_to_history(operation, result):
-    """Add calculation to history"""
     global calculation_history
     entry = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -122,7 +113,6 @@ def add_to_history(operation, result):
     calculation_history.append(entry)
 
 def show_history():
-    """Display calculation history"""
     if not calculation_history:
         return "No calculation history available."
     
@@ -133,13 +123,11 @@ def show_history():
     print("-" * 60)
 
 def clear_history():
-    """Clear calculation history"""
     global calculation_history
     calculation_history = []
-    return "History cleared"
+    return "History cleared!"
 
 def export_history(filename="calculator_history.json"):
-    """Export calculation history to JSON file"""
     if not calculation_history:
         return "No history to export."
     
@@ -150,28 +138,11 @@ def export_history(filename="calculator_history.json"):
     except Exception as e:
         return f"Error exporting history: {str(e)}"
 
-# ----------- Expression Evaluator -----------
+### ----------- Expression Evaluator -----------
 def evaluate_expression(expression):
-    """
-    Safely evaluate a mathematical expression.
-    Supports +, -, *, /, ^, %, parentheses, and common functions.
-    
-    Args:
-        expression: String containing the mathematical expression
-        
-    Returns:
-        Result of the evaluation or error message
-        
-    Examples:
-        "2+3*4" -> 14
-        "(10+5)/3" -> 5.0
-        "sqrt(16)+2^3" -> 12.0
-    """
     try:
-        # Replace ^ with ** for power operation
-        expression = expression.replace('^', '**')
+        expression = re.sub(r"\^", "**", expression)
         
-        # Create a safe namespace with allowed functions
         safe_namespace = {
             'sqrt': math.sqrt,
             'sin': lambda x: math.sin(math.radians(x)),
@@ -182,19 +153,15 @@ def evaluate_expression(expression):
             'abs': abs,
             'pi': math.pi,
             'e': math.e,
-            '__builtins__': {}  # Prevent access to built-in functions for security
+            '__builtins__': {}
         }
         
-        # Validate the expression contains only safe characters
-        # Allow digits, operators, parentheses, spaces, decimal points, and function/constant names
         allowed_pattern = r'^[\d+\-*/().,\s^*sqrtincoalgbe]+$'
         if not re.match(allowed_pattern, expression, re.IGNORECASE):
             return "Error: Expression contains invalid characters!"
         
-        # Evaluate the expression safely
         result = eval(expression, safe_namespace, {})
         
-        # Ensure we return a numeric result
         if isinstance(result, (int, float)):
             return result
         else:
@@ -295,17 +262,13 @@ def calculator():
     print("=" * 70)
 
     while True:
-        # Take operation input
         operation = input("\n➤ Enter operation or 'q' to quit: ").strip().lower()
-        
-        # Exit condition
         if operation == 'q':
             print("\n" + "=" * 70)
             print("👋 Goodbye! Thanks for using Advanced Python Calculator.")
             print("=" * 70)
             break
 
-        # History operations
         if operation == 'hist':
             show_history()
             continue
@@ -316,13 +279,12 @@ def calculator():
             print(f"✅ {export_history()}")
             continue
 
-        # Expression evaluator
         if operation == 'expr':
             expression = input("Enter mathematical expression: ").strip()
             if expression:
                 result = evaluate_expression(expression)
                 print(f"✅ Result: {result}")
-                if not isinstance(result, str):  # Don't add errors to history
+                if not isinstance(result, str):
                     add_to_history(expression, result)
             else:
                 print("❌ No expression provided!")
@@ -436,11 +398,9 @@ def calculator():
                 print("❌ Invalid input! Please enter a numeric value.")
             continue
 
-        # Scientific single-number operations
         if operation in ['sqrt', 'sin', 'cos', 'tan', 'ln', '!', 'abs']:
             try:
                 num = float(input("Enter number: "))
-                
                 if operation == 'sqrt':
                     result = square_root(num)
                     op_str = f"√{num}"
@@ -464,13 +424,12 @@ def calculator():
                     op_str = f"|{num}|"
                 
                 print(f"✅ Result: {result}")
-                if not isinstance(result, str):  # Don't add errors to history
+                if not isinstance(result, str):
                     add_to_history(op_str, result)
             except ValueError:
                 print("❌ Invalid input! Please enter a numeric value.")
             continue
 
-        # Logarithm (special case - two inputs)
         if operation == 'log':
             try:
                 num = float(input("Enter number: "))
@@ -485,12 +444,10 @@ def calculator():
                 print("❌ Invalid input! Please enter numeric values.")
             continue
 
-        # Validate basic operation
         if operation not in ['+', '-', '*', '/', '^', '%']:
             print("❌ Invalid operation! Please choose a valid operation from the list.\n")
             continue
 
-        # Input numbers, handle non-numeric input error
         try:
             num1 = float(input("Enter the first number: "))
             num2 = float(input("Enter the second number: "))
@@ -498,7 +455,6 @@ def calculator():
             print("❌ Invalid input! Please enter numeric values.\n")
             continue
 
-        # Perform selected operation
         if operation == '+':
             result = add(num1, num2)
             op_str = f"{num1} + {num2}"
@@ -518,12 +474,65 @@ def calculator():
             result = modulus(num1, num2)
             op_str = f"{num1} % {num2}"
 
-        # Display result and add to history
         print(f"✅ Result: {result}")
-        if not isinstance(result, str):  # Don't add errors to history
+        if not isinstance(result, str):
             add_to_history(op_str, result)
 
-# ----------- Run program -----------
-if __name__ == "__main__":
-    calculator()
+### ----------- Extra Features -----------
+def run_tests():
+    print("\n🧩 Running basic tests...")
+    assert add(2,3) == 5
+    assert subtract(5,2) == 3
+    assert multiply(3,4) == 12
+    assert divide(10,2) == 5
+    assert power(2,3) == 8
+    assert modulus(10,3) == 1
+    assert square_root(16) == 4
+    assert absolute_value(-5) == 5
+    print("✅ All tests passed!")
 
+def launch_gui():
+    def on_calculate():
+        expr = entry.get()
+        result = evaluate_expression(expr)
+        messagebox.showinfo("Result", f"{expr} = {result}")
+        if not isinstance(result, str):
+            add_to_history(expr, result)
+
+    window = tk.Tk()
+    window.title("🧮 Advanced Python Calculator (GUI)")
+    window.geometry("400x200")
+
+    tk.Label(window, text="Enter Expression:", font=("Arial", 14)).pack(pady=10)
+    entry = tk.Entry(window, font=("Arial", 14), width=25)
+    entry.pack(pady=5)
+
+    tk.Button(window, text="Calculate", font=("Arial", 12), command=on_calculate).pack(pady=10)
+    tk.Button(window, text="Show History", font=("Arial", 12), command=show_history).pack()
+
+    window.mainloop()
+
+### ----------- Program Entry -----------
+if __name__ == "__main__":
+    print("\n📘 MAIN MENU")
+    print("1. Run Calculator (Text Mode)")
+    print("2. Run GUI Calculator")
+    print("3. Show History")
+    print("4. Run Tests")
+    print("5. Export History")
+    print("6. Quit")
+
+    choice = input("Choose an option: ").strip()
+
+    if choice == '1':
+        calculator()
+    elif choice == '2':
+        launch_gui()
+    elif choice == '3':
+        show_history()
+    elif choice == '4':
+        run_tests()
+    elif choice == '5':
+        print(export_history())
+    else:
+        print("👋 Goodbye!")

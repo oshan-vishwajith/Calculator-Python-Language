@@ -5,9 +5,11 @@
 ![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen)
 ![Hacktoberfest](https://img.shields.io/badge/hacktoberfest-friendly-orange)
 
-An advanced command-line calculator built with Python, featuring basic arithmetic, scientific functions, memory operations, and calculation history tracking. Perfect for students, developers, and Hacktoberfest contributors!
 
-## ✨ Features
+Advanced Python Calculator – A powerful command-line calculator featuring basic arithmetic, scientific functions, memory operations, and calculation history tracking.
+Ideal for students, developers, and Hacktoberfest contributors looking for a versatile and easy-to-use math tool!
+
+## ✨ Key Features
 
 ### Basic Operations
 
@@ -21,7 +23,7 @@ An advanced command-line calculator built with Python, featuring basic arithmeti
 ### Scientific Functions
 
 - √ **Square Root** - Calculate square roots
-- 📊 **Trigonometry** - Sine, Cosine, Tangent (in degrees)
+- 📊 **Trigonometry** - Sine, Cosine, Tangent (degrees)
 - 📈 **Logarithms** - Base-10 logarithm and natural logarithm
 - ❗ **Factorial** - Calculate factorials
 - |x| **Absolute Value** - Get absolute values
@@ -48,12 +50,15 @@ An advanced command-line calculator built with Python, featuring basic arithmeti
 - ➖ **Memory Subtract (M-)** - Subtract from memory
 - 🗑️ **Memory Clear (MC)** - Clear memory
 
-### History Features
+🧾 History Features
 
-- 📜 **Calculation History** - Track all calculations with timestamps
-- 💾 **Export History** - Save history to JSON file
-- 🔍 **View History** - Review past calculations
-- 🗑️ **Clear History** - Remove all history
+📅 Automatic Tracking — Every calculation (including expressions and functions) is stored with a timestamp.
+
+👁️ View History (hist) — Instantly display your previous calculations in an easy-to-read list.
+
+💾 Export History (export) —Save your complete calculation history as a detailed JSON file, including timestamps and results, for documentation, sharing, or later use.
+
+🧹 Clear History (clear) — Remove all stored calculations in one command and start with a fresh, clutter-free workspace anytime.
 
 ### Error Handling
 
@@ -128,13 +133,15 @@ Enter value: 50
 ### History Features Example:
 
 ```
+-💡 **Tip:** Use `hist` to review your past calculations and spot patterns in your problem-solving!
+
 ➤ Enter operation or 'q' to quit: hist
 
 📜 Calculation History:
 ------------------------------------------------------------
-1. [2025-10-31 10:15:23] 15 + 7 = 22.0
-2. [2025-10-31 10:16:45] √16 = 4.0
-3. [2025-10-31 10:17:30] sin(30°) = 0.5
+i. [2025-10-31 10:15:23] 15 + 7 = 22.0
+ii. [2025-10-31 10:16:45] √16 = 4.0
+iii. [2025-10-31 10:17:30] sin(30°) = 0.5
 ------------------------------------------------------------
 ```
 
@@ -207,15 +214,23 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ## 🎯 Future Enhancements
 
-- [ ] Graphical User Interface (GUI)
-- [ ] Complex number support
-- [ ] Matrix operations
-- [ ] Equation solver
-- [ ] Unit conversions
-- [ ] Statistical functions
-- [ ] Graphing capabilities
-- [ ] Web interface
-- [ ] Mobile app version
+🖥️ Graphical User Interface (GUI)
+
+🔢 Complex Number Support
+
+🧮 Matrix Operations
+
+🧩 Equation Solver
+
+📏 Unit Conversions
+
+📊 Statistical Functions
+
+📈 Graphing Capabilities
+
+🌐 Web Interface
+
+📱 Mobile App Version
 
 ## 📝 Requirements
 

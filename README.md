@@ -27,15 +27,21 @@ An advanced command-line calculator built with Python, featuring basic arithmeti
 - |x| **Absolute Value** - Get absolute values
 
 ### Expression Evaluator 🆕
-
 - 📐 **Full Expression Evaluation** - Calculate complete expressions in one go
 - 🔢 **Support for**: `2+3*4`, `(10+5)/3`, `sqrt(16)+2^3`
 - 🔗 **Function Chaining** - Combine multiple operations and functions
 - 🎯 **Mathematical Constants** - Use `pi` and `e` in expressions
 - 📖 **Full Guide**: See [EXPRESSION_GUIDE.md](EXPRESSION_GUIDE.md) for detailed usage
 
-### Memory Functions
+### Quick Calculations 🆕
+- 💵 **Percentage Calculator** - Calculate percentages instantly
+- 💰 **Tip Calculator** - Calculate tips and split bills
+- 🏷️ **Discount Calculator** - Find final prices after discounts
+- 📈 **Compound Interest** - Calculate investment growth
+- ⚕️ **BMI Calculator** - Calculate Body Mass Index
+- 📖 **Full Guide**: See [QUICK_CALC_GUIDE.md](QUICK_CALC_GUIDE.md) for detailed usage
 
+### Memory Functions
 - 💾 **Memory Store (MS)** - Store values in memory
 - 🔄 **Memory Recall (MR)** - Retrieve stored values
 - ➕ **Memory Add (M+)** - Add to memory
